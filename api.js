@@ -1,1 +1,0 @@
-// INTERACT WITH DynamoDB 

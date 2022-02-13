@@ -5,6 +5,9 @@ html{
 hr{
     background: grey;
 }
+body {
+    background-color: #f8f8ff;
+}
 #container{
     position: relative;
     display: flex;
@@ -149,6 +152,7 @@ ul > li{
   line-height: 20px;
   font-family: 'Open Sans', sans-serif;
 }
+
 .counter{
   font-size: 14px;
   color: #545454;
