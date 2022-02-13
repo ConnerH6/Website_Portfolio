@@ -1,14 +1,26 @@
 const countURL = 'https://ryb7z9tjek.execute-api.us-east-1.amazonaws.com/Count'
 
-
-
+getVisitors();
 function getVisitors() {
- // addVisitor();
-  $.get("https://ryb7z9tjek.execute-api.us-east-1.amazonaws.com/Count").done(function(data){
-      $("#counting").text("You are visitor number " + data.count);
-  });
+  return fetch("https://ryb7z9tjek.execute-api.us-east-1.amazonaws.com/Count",
+  {
+    method: "GET",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+  'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*'
+    },
+  })
+  .then((response) => response.json())
+  .then((responseData) => {
+    console.log(responseData);
+    return responseData;
+  })
+  .catch(error => console.warn(error));
 }
-//function addVisitor() {
- // $.get("https://t6fxdv1nr0.execute-api.us-east-1.amazonaws.com/Add").done(function(data){
-  //});
-//}
+
+
+
+
