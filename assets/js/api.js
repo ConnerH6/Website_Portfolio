@@ -1,13 +1,12 @@
 const countUrl = 'https://ryb7z9tjek.execute-api.us-east-1.amazonaws.com/Count'
-const countElement = document.getElementById('count');
+const countElement = document.getElementById('counting');
 
 updateVisitCount();
 
 function updateVisitCount() {
-    fetch(countUrl)
-        .then(res => res.json())
-        .then(res => {
-        countElement.innerHTML = res.visits;
-    });
+    $.get(countUrl).done(function(data) {
+      var obj = JSON.parse(data.body);
+      countElement.innerHTML = obj.visits;
+      
+    })
 }
-
