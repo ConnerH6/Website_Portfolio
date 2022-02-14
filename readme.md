@@ -1,3 +1,5 @@
 Portfolio Website Hosted on AWS S3
 
-Git Version Control Working.
+- CI/CD Pipeline working
+- Lambda and CORS working to increment counter in DynamoDB
+* Fix Resume link
